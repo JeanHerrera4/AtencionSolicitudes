@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 26/04/2017 09:01:16 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="dto.Solicitud" table="Solicitud">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="descripcion" type="java.lang.String">
+            <column name="DESCRIPCION" />
+        </property>
+        <property name="complejidad" type="java.lang.String">
+            <column name="COMPLEJIDAD" />
+        </property>
+        <property name="fechaSolicitud" type="java.util.Date">
+            <column name="FECHASOLICITUD" />
+        </property>
+        <property name="fechaRespuesta" type="java.util.Date">
+            <column name="FECHARESPUESTA" />
+        </property>
+        <property name="respuestaSolicitud" type="java.lang.String">
+            <column name="RESPUESTASOLICITUD" />
+        </property>
+        <many-to-one name="cliente" class="dto.Cliente" fetch="join" lazy="false">
+            <column name="CLIENTE" />
+        </many-to-one>
+        <many-to-one name="sucursal" class="dto.Sucursal" fetch="join" lazy="false">
+            <column name="SUCURSAL" />
+        </many-to-one>
+        <many-to-one name="tipoSolicitud" class="dto.TipoSolicitud" fetch="join" lazy="false">
+            <column name="TIPOSOLICITUD" />
+        </many-to-one>
+        <many-to-one name="responsable" class="dto.Empleado" fetch="join" lazy="false">
+            <column name="RESPONSABLE" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

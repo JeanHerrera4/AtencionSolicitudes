@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/atencionsolicitudes" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>dto/Cliente.hbm.xml</value>
+				<value>dto/Empleado.hbm.xml</value>
+				<value>dto/RespuestaEncuesta.hbm.xml</value>
+				<value>dto/Rol.hbm.xml</value>
+				<value>dto/Solicitud.hbm.xml</value>
+				<value>dto/Sucursal.hbm.xml</value>
+				<value>dto/TipoSolicitud.hbm.xml</value>
+				<value>dto/Usuario.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="javax.persistence.validation.mode">none</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="clienteDAO" class="implDAO.ClienteDAOimpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="empleadoDAO" class="implDAO.EmpleadoDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="usuarioDAO" class="implDAO.UsuarioDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="respuestaDAO" class="implDAO.RespuestaEncuestaDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="rolDAO" class="implDAO.RolDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="solicitudDAO" class="implDAO.SolicitudDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="tipoSolicitudDAO" class="implDAO.TipoSolicitudDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="sucursalDAO" class="implDAO.SucursalDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="respuestaEncuestaDAO" class="implDAO.RespuestaEncuestaDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="clienteBL" class="bl.ClienteBL">
+		<property name="clienteDAO" ref="clienteDAO"></property>
+		<property name="usuarioDAO" ref="usuarioDAO"></property>
+	</bean>
+	<bean id="empleadoBL" class="bl.EmpleadoBL">
+		<property name="empleadoDAO" ref="empleadoDAO"></property>
+		<property name="usuarioDAO" ref="usuarioDAO"></property>
+	</bean>
+	<bean id="usuarioBL" class="bl.UsuarioBL">
+		<property name="usuarioDAO" ref="usuarioDAO"></property>
+		<property name="rolDAO" ref="rolDAO"></property>
+	</bean>
+	<bean id="solicitudBL" class="bl.SolicitudBL">
+			<property name="usuarioDAO" ref="usuarioDAO"/>
+			<property name="clienteDAO" ref="clienteDAO"/>
+			<property name="empleadoDAO" ref="empleadoDAO"/>
+			<property name="sucursalDAO" ref="sucursalDAO"/>
+			<property name="tipoSolicitudDAO" ref="tipoSolicitudDAO"/>
+			<property name="solicitudDAO" ref="solicitudDAO"/>
+			<property name="respuestaEncuestaDAO" ref="respuestaEncuestaDAO"/>
+	</bean>
+
+	 <context:component-scan base-package="ws" /> 
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+</beans>

@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+<<<<<<< HEAD
+encoding//src/validation/Validaciones.java=UTF-8
+=======
+encoding//src/co/edu/udea/iw/bl/SolicitudBL.java=UTF-8
+encoding//src/co/edu/udea/iw/bl/test/SolicitudBLTest.java=UTF-8
+>>>>>>> ec41c9c6f367098dbf87c409b7c3592c4018f346

@@ -1,0 +1,86 @@
+Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7ac7a4e4, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6d78f375, org.springframework.test.context.support.DirtiesContextTestExecutionListener@50c87b21, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5f375618, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1810399e]
+Loading XML bean definitions from class path resource [configuracionSpring.xml]
+Refreshing org.springframework.context.support.GenericApplicationContext@57baeedf: startup date [Fri May 19 20:06:00 COT 2017]; root of context hierarchy
+Loaded JDBC driver: com.mysql.jdbc.Driver
+Hibernate Commons Annotations 3.2.0.Final
+Hibernate 3.6.10.Final
+hibernate.properties not found
+Bytecode provider name : javassist
+using JDK 1.4 java.sql.Timestamp handling
+recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+Mapping class: dto.Cliente -> Cliente
+Mapping class: dto.Empleado -> Empleado
+Mapping class: dto.RespuestaEncuesta -> RespuestaEncuesta
+Mapping class: dto.Rol -> Rol
+Mapping class: dto.Solicitud -> Solicitud
+Mapping class: dto.Sucursal -> Sucursal
+Mapping class: dto.TipoSolicitud -> TipoSolicitud
+Mapping class: dto.Usuario -> Usuario
+Hibernate Validator not found: ignoring
+Building new Hibernate SessionFactory
+Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+Using dialect: org.hibernate.dialect.MySQLDialect
+Database ->
+       name : MySQL
+    version : 5.5.52-0ubuntu0.14.04.1
+      major : 5
+      minor : 5
+Driver ->
+       name : MySQL-AB JDBC Driver
+    version : mysql-connector-java-5.1.22 ( Revision: ${bzr.revision-id} )
+      major : 5
+      minor : 1
+Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+Automatic flush during beforeCompletion(): disabled
+Automatic session close at end of transaction: disabled
+JDBC batch size: 15
+JDBC batch updates for versioned data: disabled
+Scrollable result sets: enabled
+JDBC3 getGeneratedKeys(): enabled
+Connection release mode: auto
+Maximum outer join fetch depth: 2
+Default batch fetch size: 1
+Generate SQL with comments: disabled
+Order SQL updates by primary key: disabled
+Order SQL inserts for batching: disabled
+Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+Using ASTQueryTranslatorFactory
+Query language substitutions: {}
+JPA-QL strict compliance: disabled
+Second-level cache: enabled
+Query cache: disabled
+Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+Optimize cache for minimal puts: disabled
+Structured second-level cache entries: disabled
+Echoing all SQL to stdout
+Statistics: disabled
+Deleted entity synthetic identifier rollback: disabled
+Default entity-mode: pojo
+Named query checking : enabled
+Check Nullability in Core (should be disabled when Bean Validation is on): disabled
+building session factory
+Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@7b7fdc8
+Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@51c693d
+Type registration [blob] overrides previous : org.hibernate.type.BlobType@6a57ae10
+Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@6a57ae10
+Type registration [clob] overrides previous : org.hibernate.type.ClobType@766653e6
+Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@766653e6
+Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@4e07b95f
+Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@28b46423
+Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@7fc4780b
+Not binding factory to JNDI, no JNDI name configured
+Began transaction (1) for test context [DefaultTestContext@20b12f8a testClass = SolicitudBLTest, testInstance = test.SolicitudBLTest@e84a8e1, testMethod = mostrarSolicitudes@SolicitudBLTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@2e554a3b testClass = SolicitudBLTest, locations = '{classpath:configuracionSpring.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@54a67a45]; rollback [true]
+Rolled back transaction for test context [DefaultTestContext@20b12f8a testClass = SolicitudBLTest, testInstance = test.SolicitudBLTest@e84a8e1, testMethod = mostrarSolicitudes@SolicitudBLTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@2e554a3b testClass = SolicitudBLTest, locations = '{classpath:configuracionSpring.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+Closing org.springframework.context.support.GenericApplicationContext@57baeedf: startup date [Fri May 19 20:06:00 COT 2017]; root of context hierarchy
+Closing Hibernate SessionFactory
+closing
